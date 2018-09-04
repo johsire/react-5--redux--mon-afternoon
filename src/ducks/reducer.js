@@ -18,9 +18,38 @@ const initialState = {
  email: ''
 }
 
-const UPDATE_LOAN_TYPE = "UPDATE_LOAN_TYPE";
-const UPDATE_PROPERTY_TYPE = 'UPDATE_PROPERTY_TYPE'; 
 
+// ACTION TYPES/ CONSTANTS:
+const UPDATE_LOAN_TYPE = "UPDATE_LOAN_TYPE";
+const UPDATE_PROPERTY_TYPE = "UPDATE_PROPERTY_TYPE";
+const UPDATE_CITY = "UPDATE_CITY";
+
+
+
+// ACTION CREATOR:
+export function updateLoanType( loanType ){
+ return {
+   type: UPDATE_LOAN_TYPE,
+   payload: loanType
+ }
+ }
+ 
+ export function updatePropertyType( property ) {
+ return {
+   type: UPDATE_PROPERTY_TYPE,
+   payload: property
+  }
+};
+
+export function updateCity( city ) {
+ return {
+   type: UPDATE_CITY,
+   payload: city
+  }
+};
+
+
+// REDUCER w/ our diff. CASES:
 function reducer( state = initialState, action ){ 
   switch( action.type ){
     case UPDATE_LOAN_TYPE:
@@ -29,22 +58,11 @@ function reducer( state = initialState, action ){
     case UPDATE_PROPERTY_TYPE:
         return Object.assign( {}, state, { propertyType: action.payload } );
 
+    case UPDATE_CITY:
+        return Object.assign( {}, state, { city: action.payload } );
+
     default: return state;
   }
-} 
-
-export function updateLoanType( loanType ){
-return {
-  type: UPDATE_LOAN_TYPE,
-  payload: loanType
-}
-}
-
-export function updatePropertyType( property ) {
-return {
-  type: UPDATE_PROPERTY_TYPE,
-  payload: property
-}
-}
+}; 
 
 export default reducer; 
