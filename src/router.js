@@ -13,7 +13,7 @@ import WizardEleven from './components/WizardEleven/WizardEleven';
 import Finish from './components/Finish/Finish';
 
 import NextBtn from './components/NextBtn/NextBtn';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 
 export default (
