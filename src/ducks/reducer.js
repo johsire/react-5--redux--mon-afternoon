@@ -4,7 +4,7 @@ const initialState = {
  propertyType: 'Single Family Home',
  city: '',
  propToBeUsedOn: '',
- found: "false",
+ found: false,
  realEstateAgent: "false",
  cost: 0,
  downPayment: 0,
@@ -13,18 +13,38 @@ const initialState = {
  addressOne: '',
  addressTwo: '',
  addressThree: '',
- firstName: '',
+ firstName: 'aa',
  lastName: '',
- email: '',
+ email: ''
 }
 
+const UPDATE_LOAN_TYPE = "UPDATE_LOAN_TYPE";
+const UPDATE_PROPERTY_TYPE = 'UPDATE_PROPERTY_TYPE'; 
 
-export default function reducer(state = initialState, action){
- switch(action.type){
-  // case
- }
+function reducer( state = initialState, action ){ 
+  switch( action.type ){
+    case UPDATE_LOAN_TYPE:
+        return Object.assign( {}, state, { loanType: action.payload } );
 
- return state;
+    case UPDATE_PROPERTY_TYPE:
+        return Object.assign( {}, state, { propertyType: action.payload } );
+
+    default: return state;
+  }
+} 
+
+export function updateLoanType( loanType ){
+return {
+  type: UPDATE_LOAN_TYPE,
+  payload: loanType
+}
 }
 
-export default reducer;
+export function updatePropertyType( property ) {
+return {
+  type: UPDATE_PROPERTY_TYPE,
+  payload: property
+}
+}
+
+export default reducer; 
