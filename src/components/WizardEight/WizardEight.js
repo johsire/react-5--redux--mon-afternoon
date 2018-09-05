@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 import { updateHistory } from '../../ducks/reducer';
 
 class WizardEight extends Component {
-
     render(){
+        const { updateHistory } = this.props;
+        
         return(
             <div className="parent-div">
                     <div className="vert-align">                    
