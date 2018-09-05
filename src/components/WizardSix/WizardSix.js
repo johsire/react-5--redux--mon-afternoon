@@ -12,29 +12,25 @@ class WizardSix extends Component {
             <div className="parent-div">
                     <div className="vert-align">                    <p>What is the estimated purchase price?</p> <br />
                         
-                        
-                        <input type="text" placeholder="amount" onChange={ (e) => updateCost}(e.target.value)/> <br />
                         <input type="text" placeholder="amount" onChange={ ( e ) => updateCost( e.target.value ) } /> <br />
 
-
                     <p>How much are you putting down as a down payment?</p> <br />
-                        
-                        
-                        <input type="text" placeholder="amount" onChange={this.props.updateDownPayment}/>                    
-                        
+                        <input type="text" placeholder="amount" onChange={ (e) => updateDownPayment(e.target.value) }/>                    
                     
-                    <Link to="/wSeven"><button className="margin-btn"> Next </button></Link>
+                    <Link to="/wSeven">
+                <button className="margin-btn">Next</button></Link>
                 </div>
             </div>
         )
     }
 };
 
-mapStateToProps = (state) => {
-    const { updateCost, updateDownPayment } = state;
+function mapStateToProps(state) {
+    const { cost, downPayment } = state;
 
     return {
-        updateCost, updateDownPayment
+        cost, 
+        downPayment,
     }
 };
 
