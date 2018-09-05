@@ -30,6 +30,6 @@ function mapStateToProps(state){
     return {
         realEstateAgent
     }
-}
+};
 
 export default connect(mapStateToProps, { updateRealEstateAgent })(WizardFive);
