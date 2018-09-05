@@ -24,12 +24,12 @@ class WizardTen extends Component {
 };
 
 function mapStateToProps(state) {
-    const { updateFirstName, updateLastName, updateEmail } = state;
+    const { firstName, lastName, email } = state;
 
     return {
         firstName,
         lastName,
-        email,
+        email
     }
 };
 
